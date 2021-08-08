@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <script src="/Ejercicios/ejercicio2/porcentaje.js"></script>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio JS 2</title>
+</head>
+<body>
+    <header>Ejercicio 2</header>
+    <p>
+        A un  trabajador le descuentan de su sueldo el 10% si su sueldo es menor o
+        igual a 1000, por encima de 1000 y hasta 2000 el 5% del adicional, y por
+        encima de 2000 el 3% del adicional. Escribir un algoritmo que calcule el
+        descuento y sueldo neto que recibe el trabajador dado su sueldo.
+    </p>
+    <div>
+        <label>Sueldo:</label>
+        <input type="number" id="sueldo" name="sueldo_trabajador" value="0">
+        <button type="button" onclick="totales();">Calcular</button>
+    </div>
+    <div>
+        <p>Sueldo Neto:</p>
+        <p id="neto"></p>
+        <p>descuento:</p>
+        <p id="descuento"></p> 
+    </div>
+
+
+</body>
+<script>
+    function totales(){
+           var sueldo = parseFloat(document.getElementById('sueldo').value);
+           var descuento;
+           var neto;
+
+           if(sueldo<=1000){
+            //10%
+            descuento = porcentaje(sueldo,10);
+            neto = sueldo-descuento;
+           }else if(sueldo>1000 && sueldo<=2000){
+            //15%
+            descuento = porcentaje(sueldo,15);
+            neto = sueldo-descuento;
+           }else{
+            //18%
+            descuento = porcentaje(sueldo,18);
+            neto = sueldo-descuento;
+           }
+
+           document.getElementById("descuento").innerHTML=descuento;
+           document.getElementById("neto").innerHTML=neto;
+
+    }
+ 
+</script>
+</html>
