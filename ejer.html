@@ -4,9 +4,45 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ejer</title>
+    <title>Ejercicio 1</title>
 </head>
 <body>
-    <h4>xdddddd</h4>
+    <header>Ejercicio 1</header>
+    <p>
+    1. A un trabajador le pagan según sus horas trabajadas y una tarifa de pago
+    por hora. Si la cantidad de horas trabajadas es mayor a 40 horas, la
+    tarifa   se   incrementa   en   un   50%   para   las   horas   extras.   Escribir   un
+    algoritmo que calcule el salario del trabajador dadas las horas trabajadas
+    y la tarifa. 
+    </p>
+    <div>
+        <form action="">
+        <ul>
+           <label for="name">Horas de trabajo:</label>
+           <input type="number" id="trabajo" name="horastrab" value="0">
+           <input type="number" id="tarifa" name="tarifa" value="0">
+           <button type="button" onclick="salario()">Calcular</button>
+        </ul>
+        </form>
+    </div>
 </body>
+<script>
+   function salario(){
+      var horas = parseInt(document.getElementById('trabajo').value);
+      var tarifa = parseInt(document.getElementById('tarifa').value);
+      var total;
+      var horasextra;
+      var pago;
+
+      if(horas>=40){
+        pago = (tarifa * 40)
+        horasextra = ((tarifa *1.5)*(horas-40));
+        total = (pago+horasextra)
+      }
+
+      //console.log(total);
+      alert(total);
+   }
+
+</script>
 </html>
