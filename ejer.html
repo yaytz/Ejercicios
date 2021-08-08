@@ -36,8 +36,12 @@
 
       if(horas>=40){
         pago = (tarifa * 40)
-        horasextra = ((tarifa *1.5)*(horas-40));
-        total = (pago+horasextra)
+        horasextra = ((tarifa *1.5)*(horas-40))
+        total = (pago + horasextra)
+      }
+      else{
+          pago = (tarifa * horas)
+          horasextra = 0
       }
       alert(total);
    }
