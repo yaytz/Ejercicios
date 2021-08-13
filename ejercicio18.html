@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio 18</title>
+</head>
+<body>
+    <header>Ejercicio 18</header>
+    <p>
+        16. Dadas N notas de un estudiante, escribir un algoritmo que calcule:
+        a) Cuántas notas tiene desaprobadas.
+        b) Cuántas aprobadas.
+        c) El promedio de notas.
+        d) El promedio de notas aprobadas y el de desaprobadas.
+       
+    </p>
+    <div>
+        <label>Numero:</label>
+        <input type="number" id="numero" name="numeros">
+        <button type="button" onclick="checar();">ingresa un numero</button>
+        <p>impresion</p>
+        <p id="impresion"></p>
+    </div>
+</body>
+<script>
+    function checar(){
+            var numero = parseInt(document.getElementById('numero').value);
+            var i, sum =0;
+            for(i=1; i<=numero; i++){
+                sum = sum+i;
+            }
+            //del num
+            document.getElementById('impresion').innerHTML = numero + sum;
+        }
+            
+</script>
+</html>
