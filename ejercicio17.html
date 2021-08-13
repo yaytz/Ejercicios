@@ -20,13 +20,26 @@
            <input type="number" id="trabajo" name="horastrab" value="0">
            <input type="number" id="tarifa" name="tarifa" value="0">
            <button type="button" onclick="salario()">Calcular</button>
+           <p id= 'imprimir' ></p>
         </ul>
         </form>
     </div>
 </body>
 <script>
    function salario(){
-      
+      var horas = parseFloat(document.getElementById('trabajo').value);
+      var tarifa = parseFloat(document.getElementById('tarifa').value);
+      var total,horasextra,pago;
+      if(horas>=40){
+        pago = (tarifa * 40)
+        horasextra = ((tarifa *1.5)*(horas-40))
+        total = (pago + horasextra)*200
+      }
+      else{
+          pago = (tarifa * horas)
+          horasextra = 0
+      }
+     document.getElementById('imprimir').innerHTML = total;
    }
 
 </script>
