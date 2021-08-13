@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio 7</title>
+</head>
+<body>
+    <header>Ejercicio 7</header>
+    <p>
+    7. Escribir el algoritmo que permita emitir la factura correspondiente a una
+    compra de un articulo determinado, del que se adquieren una o varias
+    unidades. El IVA es del 15% y si el precio neto ( precio venta mas IVA) es
+    mayor de 50.00 pesos se debe realizar un descuento del 5%.
+    
+    </p>
+    <div>
+        <form action="">
+        <ul>
+           <label for="name">Precio:</label>
+           <input type="number" id="precio" name="precios">
+           <label for="name">Cantidad:</label>
+           <input type="number" id="cantidad" name="cantidads"><br>
+           <button type="button" onclick="impresiof()">Impresion de factura</button>
+           <p>Facturacion</p>
+           <p id="impresion"></p>
+           </p>
+        </ul>
+        </form>
+    </div>
+</body>
+<script>
+   function impresiof(){
+     var precio = parseFloat(document.getElementById('precio').value);
+     var cantidad = parseFloat(document.getElementById('cantidad').value);
+     var iva,venta, neto, descuento,total;
+     venta = precio*cantidad;
+     iva = venta * .15;
+     bruto = venta + iva;
+     if(bruto>=50){
+        descuento = (bruto*5)/100;
+     }
+     else{
+        descuento = 0;     
+     }
+     total = bruto - descuento;
+     document.getElementById("impresion").innerHTML= venta + ' , '+ iva + ' , ' + bruto + ' , ' + descuento + ' , ' + total;
+
+   }
+</script>
+</html>

@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio 14</title>
+</head>
+<body>
+    <header>Ejercicio 14</header>
+    <p>
+        14. "TIENDAS PATITO" se encuentra de aniversario y ha programado una
+        serie de ofertas con la finalidad de brindar facilidades a sus clientes y
+        al a vez de incrementar sus ventas. Estas ofertas se basan específicamente
+        en un porcentaje de descuento sobre el total de compra el cual varia de
+        acuerdo al monto. Por un monto mayor o igual a $500 se hará un descuento
+        del 30%. Por un monto menor de $500 pero mayor o igual a 200 se hará un
+        descuento del 20%.Por un monto menor de $200 pero mayor o igual a 100 se
+        hará un descuento del 10%. Escribir un algoritmo que calcule la cantidad
+        total a pagar de una compra.
+    </p>
+    <div>
+        <label>Precio:</label>
+        <input type="number" id="precio" name="precios">
+        <button type="button" onclick="checar();">checar precio</button>
+        <p>precio total</p>
+        <p id="impresion"></p>
+    </div>
+</body>
+<script>
+    function checar(){
+           var precio = parseFloat(document.getElementById('precio').value);
+           var descuento, total;
+           if(precio>=500){
+            descuento = porcentaje(precio,30);
+           }
+           else if(precio>=200 && precio<=500){
+            descuento = porcentaje(precio,20);
+           }
+           else if(precio>=100 && precio<=200){
+            descuento = porcentaje(precio,10);
+           }
+           total=precio-descuento;
+           document.getElementById("impresion").innerHTML=total;
+
+    }
+    function porcentaje(porcentaje,num){
+    
+    return (porcentaje/100)*num;
+
+}
+ 
+</script>
+</html>

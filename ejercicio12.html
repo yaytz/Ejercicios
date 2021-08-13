@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio 12</title>
+</head>
+<body>
+    <header>Ejercicio 12</header>
+    <p>
+    12. Katthy organiza una fiesta en la cual una computadora controla el
+    ingreso mediante 5 claves. Si se ingresa al menos una clave incorrecta la
+    computadora imprimirá "TE EQUIVOCASTE DE FIESTA" y no permitirá el
+    ingreso. Si las 5 claves son correctas imprimirá "BIENVENIDO A LA FIESTA".
+    Escribir un algoritmo que realice lo anterior.
+    </p>
+    <div>
+        <form action="">
+        <ul>
+            <label for="llave1">Llave 1:</label>
+            <input type="text" id="Llave1" name="llave1">
+            <label for="llave2">Llave 2:</label>
+            <input type="text" id="Llave2" name="llave2">
+            <label for="llave3">Llave 3:</label>
+            <input type="text" id="Llave3" name="llave3">
+            <label for="llave4">Llave 4:</label>
+            <input type="text" id="Llave4" name="llave4">
+            <label for="llave5">Llave 5:</label>
+            <input type="text" id="Llave5" name="llave5"><br>
+            <button type="button" onclick="mostrar();">Comprobar contraseñas</button> <br>
+            <p>Ingresar contra</p>
+            <p id="pass"></p>
+        </ul>
+        </form>
+    </div>
+</body>
+<script>
+   function mostrar(){
+        var llave1 = document.getElementById('Llave1').value;
+        var llave2 = document.getElementById('Llave2').value;
+        var llave3 = document.getElementById('Llave3').value;
+        var llave4 = document.getElementById('Llave4').value;
+        var llave5 = document.getElementById('Llave5').value;
+        if(llave1 == "TIENES" && llave2 == "QUE SER" && llave3 == "INVITADO" && llave4 == "PARA" && llave5 == "INGRESAR"){
+            document.getElementById('pass').innerHTML = 'BIENVENIDO A LA FIESTA';
+        }
+        else{
+            document.getElementById('pass').innerHTML = 'TE EQUIVOCASTE DE FIESTA'; 
+        }
+   }
+</script>
+</html>

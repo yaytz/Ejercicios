@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio 8</title>
+</head>
+<body>
+    <header>Ejercicio 8</header>
+    <p>
+    8. Escribir el algoritmo que muestre el mensaje de acuerdo a la edad
+    ingresada: Si la edad es de 0 a 10 años “niño”, si la edad es de 11 a 14
+    años “púber” , si la edad es de 15 a 18 años “ adolescente” , si la edad
+    es de 19 a 25 años “joven” , si la edad es de 26 a 65 años “ adulto” , si
+    la edad es mayor de 65 “anciano”. 
+    
+    </p>
+    <div>
+        <form action="">
+        <ul>
+           <label for="name">Edad:</label>
+           <input type="number" id="edad" name="edades">
+           <button type="button" onclick="revisar()">Que eres?</button>
+           <p>????</p>
+           <p id="impresion"></p>
+           </p>
+        </ul>
+        </form>
+    </div>
+</body>
+<script>
+   function revisar(){
+     var edad = parseInt(document.getElementById('edad').value);
+     var ps;
+     if(edad<=10){
+         ps = "niño";
+     }
+     else if(edad<=14){
+         ps = "puberto";
+     }
+     else if(edad<=18){
+         ps = "adolecente";
+     }
+     else if(edad<=25){
+         ps = "joven";
+     }
+     else if(edad<=65){
+         ps = "adulto";
+     }
+     else if(edad>65){
+         ps = "anciano";
+     }
+     document.getElementById("impresion").innerHTML= ps;
+   }
+</script>
+</html>
