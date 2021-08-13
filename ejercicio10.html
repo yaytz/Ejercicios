@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio 10</title>
+</head>
+<body>
+    <header>Ejercicio 10</header>
+    <p>
+        10. Dadas 3 longitudes, escribir un algoritmo que determine mediante un
+        mensaje si tales longitudes forman un triangulo: equilátero *cuando sus
+        tres lados son iguales*, isósceles *cuando dos de sus lados son iguales* o
+        escaleno *cuando sus tres lados son diferentes*, o no forman triangulo
+        *cada lado tiene que ser menor que la suma de los otros dos*.
+    </p>
+    <div>
+        <form action="">
+        <ul>
+            <label for="plado">Lado 1:</label>
+            <input type="number" id="PLado" name="plado">
+            <label for="slado">Lado 2:</label>
+            <input type="number" id="SLado" name="slado">
+            <label for="tlado">Lado 3:</label>
+            <input type="number" id="TLado" name="tlado"><br>
+            <button type="button" onclick="mostrar();">Mostrar mensaje</button> <br>
+            <p>Tipo de Triangulo</p>
+            <p id="Type"></p>
+        </ul>
+        </form>
+    </div>
+</body>
+<script>
+   function mostrar(){
+            var mensaje;
+            var plado = parseInt(document.getElementById('PLado').value);
+            var slado = parseInt(document.getElementById('SLado').value);
+            var tlado = parseInt(document.getElementById('TLado').value);
+            var mensaje;
+            if((plado<(slado + tlado)) && (slado<(plado+tlado))&&(tlado<(plado+slado))){
+                if(plado == slado || slado== tlado || plado == tlado){
+                    mensaje = 'Triangulo Equilatero';
+                }
+                else if(plado == slado || slado == tlado || plado == tlado){
+                    mensaje = 'Triangulo Isoceles';
+                }
+                else if(plado!=slado && slado != tlado && plado !=tlado){
+                    mensaje = 'Triangulo Escaleno';
+                }
+            }
+            else{
+                mensaje = 'No hay triangulo';
+            }
+            
+            document.getElementById('Type').innerHTML=mensaje;
+        }
+</script>
+</html>
+
+
+
+
+
+
