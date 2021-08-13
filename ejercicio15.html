@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio 15</title>
+</head>
+<body>
+    <header>Ejercicio 15</header>
+    <p>
+        15. Escribir un algoritmo que permita escoger en un conjunto de números
+        naturales:
+        Cuáles son menores que 15.
+        Cuáles son mayores de 50.
+        Cuáles están comprendidos entre 25 y 50.
+        El algoritmo termina con el ingreso de un número negativo.
+    </p>
+    <div>
+        <label>Numero:</label>
+        <input type="number" id="numero" name="numeros">
+        <button type="button" onclick="checar();">ingresa un numero</button>
+        <p>impresion</p>
+        <p id="impresion"></p>
+        <p>los menores a 15</p>
+        <p id= 'menores' ></p>
+        <p>mayores a 50</p>
+        <p id= 'mayores' ></p>
+        <p>entre 25 y 50</p>
+        <p id= 'compuestos' ></p>
+    </div>
+</body>
+<script>
+    window.onload = function(){
+        window.menores15=[];
+        windodow.mayores=[];
+        winodws.compuestos=[];
+        window.comparacion=[];
+    }
+    function checar(){
+        var xd = document.getElementById('numero').value;
+        comparacion.push(xd);
+        if(numero<15){
+           menores15.push(xd);
+           let  resultado = document.getElementById('menores15');
+           resultado.innerHTML = '';
+           for(const numero of menores15){
+               let numeroP = document.createElement('p');
+               numeroP.innerText = numero;
+               resultado.appendChild(numeroP);
+           }
+        }
+        else if(numero>50){
+            mayores.push(xd);
+            let resultado = document.getElementById(mayores)
+
+        }
+        else if(numero>=25 && numero <= 50){
+            compuestos.push(xd);
+        }
+     }
+    
+            
+</script>
+</html>
