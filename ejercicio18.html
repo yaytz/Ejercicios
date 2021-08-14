@@ -7,33 +7,119 @@
     <title>Ejercicio 18</title>
 </head>
 <body>
-    <header>Ejercicio 18</header>
-    <p>
-        16. Dadas N notas de un estudiante, escribir un algoritmo que calcule:
-        a) Cuántas notas tiene desaprobadas.
-        b) Cuántas aprobadas.
-        c) El promedio de notas.
-        d) El promedio de notas aprobadas y el de desaprobadas.
-       
-    </p>
+    <header>
+        <h2>Ejercicio 18</h2>
+    </header>
+    <section>
+        <p>Dadas N notas de un estudiante, escribir un algoritmo que calcule:</p>
+            <li>Cuántas notas tiene desaprobadas.</li>
+            <li>Cuántas aprobadas.</li>
+            <li>El promedio de notas.</li>
+            <li>El promedio de notas aprobadas y el de desaprobadas.</li>
+
+    </section>
     <div>
-        <label>Numero:</label>
-        <input type="number" id="numero" name="numeros">
-        <button type="button" onclick="checar();">ingresa un numero</button>
-        <p>impresion</p>
-        <p id="impresion"></p>
+        <form>
+            <label>Escriba las notas del estudiante: </label>
+            <input type="number" id="Notas"> <br>
+            <button type="button" onclick="mostrar_notas();">Mostrar Notas</button>
+            <button type="button" onclick="calcular_promedios();">Promedio de las Notas</button>
+        </form>
     </div>
-</body>
-<script>
-    function checar(){
-            var numero = parseInt(document.getElementById('numero').value);
-            var i, sum =0;
-            for(i=1; i<=numero; i++){
-                sum = sum+i;
-            }
-            //del num
-            document.getElementById('impresion').innerHTML = numero + sum;
+    <div>
+        <p>Notas desaprobadas</p>
+        <p id="desaprobadas"></p>
+        <p>Notas aprobadas</p>
+        <p id="aprobadas"></p>
+        <p>Promedio de las Notas</p>
+        <p id="promedio"></p>
+        <p>Promedio de notas aprobadas</p>
+        <p id="Paprobadas"></p>
+        <p>Promedio de notas no aprobadas</p>
+        <p id="Pdesaprobadas"></p>
+    </div>
+    <script>
+        window.onload = function ()
+        {
+            window.notas = [];
+            window.desaprobadas = [];
+            window.aprobadas = [];
         }
+        function mostrar_notas()
+        {
+            let dato;
+            dato = parseFloat(document.getElementById('Notas').value) ;
+
+            if(dato>=11)
+            {
+                window.alert("Esa nota es imposible");
+            }
+            else
+            {
+                notas.push(dato);
+                if(dato<=5.9)
+                {
+                    desaprobadas.push(dato);
+                    let reprobada = document.getElementById('desaprobadas');
+                    reprobada.innerHTML='';
+                    
+                    for (const dato of desaprobadas) 
+                    {
+                        let nota_reprobada = document.createElement('p');    
+                        nota_reprobada.innerText = dato;
+                        reprobada.appendChild(nota_reprobada);
+                    }
+                }
+                else
+                {
+                    aprobadas.push(dato);
+                    let aprobada = document.getElementById('aprobadas');
+                    aprobada.innerHTML='';
+                    for (const dato of aprobadas) 
+                    {
+                        let nota_aprobada = document.createElement('p');
+                        nota_aprobada.innerHTML = dato;
+                        aprobada.appendChild(nota_aprobada);    
+                    }
+                }
+            }
+        }
+        function calcular_promedios ()
+        {
+            //Saca promedio de todas las materias
+            var i,j,k,suma1,suma2,suma3,promedio1,promedio2,promedio3;
             
-</script>
+            suma1 = 0;
+
+            for(i = 0; i<notas.length; i++)
+            {
+                suma1 += notas[i];
+            }
+            promedio1 = suma1/notas.length;
+            document.getElementById('promedio').innerHTML = promedio1;
+            
+            //Sacar promedio de las aprobadas
+
+            suma2 = 0;
+
+            for(j=0; j < aprobadas.length; j++)
+            {
+                suma2 += aprobadas[j];
+            }
+            promedio2 = suma2/aprobadas.length;
+            document.getElementById('Paprobadas').innerHTML = promedio2;
+
+            //Saca promedio de las no aprobadas
+
+            suma3 = 0;
+
+            for(k=0; k < desaprobadas.length; k++)
+            {
+                suma3 += desaprobadas[k];
+            }
+            promedio3 = suma3/desaprobadas.length;
+            document.getElementById('Pdesaprobadas').innerHTML = promedio3;
+        }
+    </script>
+</body>
 </html>

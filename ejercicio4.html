@@ -7,9 +7,7 @@
     <title>Ejercicio 4</title>
 </head>
 <body>
-    <header>
-        Ejercicio 4
-    </header>
+    <header>Ejercicio 4</header>
     <section>
         Escribir un algoritmo que lea un tiempo en segundos y que calcule los
         segundos restantes que le correspondan para convertirse exactamente en
@@ -27,8 +25,7 @@
         <p id="Minutos"></p>
     </div>
     <script>
-        function convertir_minutos()
-        {
+        function convertir_minutos(){
             var segundos = parseFloat(document.getElementById('Segundos').value);
             var minutes = Math.floor(segundos/60);
             var s = segundos-(minutes*60);
