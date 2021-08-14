@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio 20</title>
+</head>
+<body>
+    <header>Ejercicio 20</header>
+    <p>
+        20. Realizar un algoritmo que permita pedir 50 números naturales y
+        determine e imprima cuántos son pares, impares, positivos y negativos.
+    </p>
+    <div>
+        <label>Numero:</label>
+        <input type="number" id="numero" name="numeros">
+        <button type="button" onclick="checar();">ingresa un numero</button>
+        <p>pares</p>
+        <p id= 'pares' ></p>
+        <p>impares</p>
+        <p id= 'impares' ></p>
+        <p>positivos</p>
+        <p id= 'positivos' ></p>
+        <p>negativos</p>
+        <p id= 'negativos' ></p>
+</body>
+<script>
+    window.onload = function(){
+        window.pares=[];
+        window.impares=[];
+        window.positivos=[];
+        window.negativos=[];
+        window.comparar=[];
+    }
+    function checar(){
+        var numero = document.getElementById('numero').value;
+        comparar.push(numero);
+            if (numero%2==0){
+                pares.push(numero);
+                document.getElementById('pares').innerHTML = pares;
+                 }
+            else{
+                impares.push(numero);
+                document.getElementById('impares').innerHTML = impares;
+            }
+           if(numero>0){
+                positivos.push(numero);
+                document.getElementById('posivos').innerHTML = positivos;
+           }
+           else{
+                negativos.push(numero);
+                document.getElementById('negativos').innerHTML = negativos;  
+           }
+         }
+                        
+</script>
+</html>
+
