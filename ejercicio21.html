@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio 21</title>
+</head>
+<body>
+    <header>Ejercicio 21</header>
+    <p>
+        21. Desarrollar un algoritmo para calcular e imprimir el factorial de un
+        número dado.
+    </p>
+    <div>
+        <label>Numero:</label>
+        <input type="number" id="numero" name="numeros">
+        <button type="button" onclick="checar();">ingresa un numero</button>
+        <p>impresion</p>
+        <p id="impresion"></p>
+    </div>
+</body>
+<script>
+    function checar(){
+        var numero = parseInt(document.getElementById('numero').value);
+            var i,sum = 1;
+
+            for(i=1; i<=numero; i++){
+                sum = sum * i;
+            }
+            document.getElementById('impresion').innerHTML =  sum;
+        }              
+</script>
+</html>
